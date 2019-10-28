@@ -8,7 +8,12 @@ sample.notify("Hello There!")
 
 
 module Clockwork
-  # Here is a Clockwork method that says, "How long does it take you to process?"
-  # Write the process and settings you want to send at regular intervals with slack here
-   every(3.minutes, 'less.frequent.job')
+  handler do |job|
+  case job
+  when "kokoro.job"
+    puts "こころ"
+  when "pyon.job"
+    puts "ぴょん"
+  end
+end
 end
